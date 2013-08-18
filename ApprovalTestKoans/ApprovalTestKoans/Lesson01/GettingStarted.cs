@@ -38,29 +38,21 @@ namespace ApprovalTestKoans.Lesson01
 			var namer = Approvals.GetDefaultNamer();
 			Assert.AreEqual(namer.Name, ___);
 		}
-//		@Test
-//		public
-//		void ___ 
-//		()
-//		throws
-//		Exception
-//		{
-//			ApprovalNamer namer = Approvals.createApprovalNamer();
-//			Assert.assertEquals(namer.getApprovalName(), "GettingStarted.UsesMethodName");
-//		}
-//		@Test
-//		public
-//		void FileNames 
-//		()
-//		throws
-//		Exception
-//		{
-//			ApprovalNamer namer = Approvals.createApprovalNamer();
-//			String className = ___;
-//			String methodName = "FileNames";
-//			String approvalName = className + "." + methodName;
-//			Assert.assertEquals(namer.getApprovalName(), approvalName);
-//		}
+		[TestMethod]
+		public void ____()
+		{
+			var namer = Approvals.GetDefaultNamer();
+			Assert.AreEqual(namer.Name, "GettingStarted.UsesMethodName");
+		}
+		[TestMethod]
+		public void FileNames()
+		{
+			var namer = Approvals.GetDefaultNamer();
+			string className = ___;
+			string methodName = "FileNames";
+			string approvalName = className + "." + methodName;
+			Assert.AreEqual(namer.Name, approvalName);
+		}
 //		@Test
 //		public
 //		void ChangingTheGoldenMaster 

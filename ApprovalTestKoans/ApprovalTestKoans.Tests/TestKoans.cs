@@ -12,14 +12,21 @@ namespace ApprovalTestKoans.Tests
 		[TestMethod]
 		public void TestGettingStarted()
 		{
-			verifyKoan<GettingStarted>(k => k.NormalAsserts, "Small String");
-			verifyKoan<GettingStarted>(k => k.ApprovalHidesTheExpectation, "This is in the approved file");
-			verifyKoan<GettingStarted>(k => k.ApprovalFileName, "GettingStarted.ApprovalFileName");
+			VerifyKoan<GettingStarted>(k => k.NormalAsserts, "Small String");
+			VerifyKoan<GettingStarted>(k => k.ApprovalHidesTheExpectation, "This is in the approved file");
+			VerifyKoan<GettingStarted>(k => k.ApprovalFileName, "GettingStarted.ApprovalFileName");
+			VerifyKoanIsUnsolved<GettingStarted>(k => k.ApprovalFileName);
+			VerifyKoan<GettingStarted>(k => k.FileNames, "GettingStarted");
 		}
 
-		private void verifyKoan<T>(Func<T, Action> method, string answer) where T : Koans, new()
+		private void VerifyKoanIsUnsolved<T>(Func<T, Action> method) where T : Koans, new()
 		{
 			RunKoan(method, new T(), pass: false);
+		}
+
+		private void VerifyKoan<T>(Func<T, Action> method, string answer) where T : Koans, new()
+		{
+			VerifyKoanIsUnsolved(method);
 			var k = new T();
 			k.___ = answer;
 			RunKoan(method, k, pass: true);
