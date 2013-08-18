@@ -1,6 +1,0 @@
-﻿Please fill in the blank[0] = Firefly
-Please fill in the blank[1] = Game of Throne
-Please fill in the blank[2] = Futurama
-Please fill in the blank[3] = Arrested Development
-Please fill in the blank[4] = Big Bang Theory
-Please fill in the blank[5] = Better Off Ted

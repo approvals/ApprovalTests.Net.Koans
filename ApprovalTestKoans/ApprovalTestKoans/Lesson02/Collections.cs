@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using ApprovalTestKoans.Helpers;
 using ApprovalTests;
 using ApprovalTests.Reporters;
@@ -30,59 +29,65 @@ namespace ApprovalTestKoans.Lesson02
 		}
 
 		[TestMethod]
-  public void ListsWorkTheSameAsArrays() 
-  {
-    var approvalsIsGoodFor = new List<string>();
-    approvalsIsGoodFor.Add("Strings");
-    approvalsIsGoodFor.Add("Objects");
-    approvalsIsGoodFor.Add("Log Files");
-    approvalsIsGoodFor.Add("WinForms");
-    approvalsIsGoodFor.Add("WPF");
-    approvalsIsGoodFor.Add("RDLC Reports");
-    approvalsIsGoodFor.Add("ASP Pages");
-    approvalsIsGoodFor.Add("ASP.MVC Pages");
-    approvalsIsGoodFor.Add("ASP Routes");
-    approvalsIsGoodFor.Add("Entity Framework Queries");
-    approvalsIsGoodFor.Add(___);
-    approvalsIsGoodFor.Add("Xml");
-    approvalsIsGoodFor.Add("Html");
-    approvalsIsGoodFor.Add("Json");
-    approvalsIsGoodFor.Add("Email");
-    Approvals.VerifyAll( approvalsIsGoodFor,"Good For");
-  }
+		public void ListsWorkTheSameAsArrays()
+		{
+			var approvalsIsGoodFor = new List<string>();
+			approvalsIsGoodFor.Add("Strings");
+			approvalsIsGoodFor.Add("Objects");
+			approvalsIsGoodFor.Add("Log Files");
+			approvalsIsGoodFor.Add("WinForms");
+			approvalsIsGoodFor.Add("WPF");
+			approvalsIsGoodFor.Add("RDLC Reports");
+			approvalsIsGoodFor.Add("ASP Pages");
+			approvalsIsGoodFor.Add("ASP.MVC Pages");
+			approvalsIsGoodFor.Add("ASP Routes");
+			approvalsIsGoodFor.Add("Entity Framework Queries");
+			approvalsIsGoodFor.Add(___);
+			approvalsIsGoodFor.Add("Xml");
+			approvalsIsGoodFor.Add("Html");
+			approvalsIsGoodFor.Add("Json");
+			approvalsIsGoodFor.Add("Email");
+			Approvals.VerifyAll(approvalsIsGoodFor, "Good For");
+		}
+
 		[TestMethod]
 		public void DictionariesAreSortedBeforeDisplay()
-  {
-    var m = new Dictionary<int, string>();
-    m[1000]= "M";
-    m[10]= "X";
-    m[1]= "I";
-    m[100]= "C";
-    m[5]= "V";
-    m[500]= "D";
-    m[50]= ___;
-    Approvals.VerifyAll(m);
-  }
+		{
+			var m = new Dictionary<int, string>();
+			m[1000] = "M";
+			m[10] = "X";
+			m[1] = "I";
+			m[100] = "C";
+			m[5] = "V";
+			m[500] = "D";
+			m[50] = ___;
+			Approvals.VerifyAll(m);
+		}
+
 		[TestMethod]
-  public void TheUseOfTheLabel() 
-  {
-    string[] greatTv = {
-        "Firefly", "Game of Throne", "Futurama", "Arrested Development", "Big Bang Theory", "Better Off Ted"};
-    Approvals.VerifyAll( greatTv,___);
-  }
-//  @Test
-//  public void ApprovalHelpShowWhenThingsHaveBeenRemoved() throws Exception
-//  {
-//    HashMap<String, String> m = new HashMap<String, String>();
-//    m.put("Miss Scarlet", "Conservitory");
-//    m.put("Colonel Mustard", "Kitchen");
-//    m.put("Mrs. White", "Billiard Room");
-//    m.put("Mr. Green", "Library");
-//    m.put("Mrs. Peacock", "Dining Room");
-//    m.put("Professor Plum", "Study");
-//    m.remove(___);
-//    Approvals.verify(m);
-//  }
+		public void TheUseOfTheLabel()
+		{
+			string[] greatTv =
+				{
+					"Firefly", "Game of Throne", "Futurama", "Arrested Development", "Big Bang Theory", "Better Off Ted"
+				};
+			Approvals.VerifyAll(greatTv, ___);
+		}
+
+		[TestMethod]
+		public void ApprovalHelpShowWhenThingsHaveBeenRemoved()
+		{
+			var m = new Dictionary<string, string>();
+			m["Miss Scarlet"] = "Conservitory";
+			m["Colonel Mustard"] = "Kitchen";
+			m["Mrs. White"] = "Billiard Room";
+			m["Mr. Green"] = "Library";
+			m["Mrs. Peacock"] = "Dining Room";
+			m["Professor Plum"] = "Study";
+			m.Remove(___);
+			Approvals.VerifyAll(m);
+		}
+
 //  @Test
 //  public void ApprovalHelpShowWhenThingsHaveBeenAdded() throws Exception
 //  {
