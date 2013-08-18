@@ -19,7 +19,7 @@ namespace ApprovalTestKoans.Lesson02
  * Do not change anything except the blank (___)
  */
 
-	[UseReporter(typeof (DiffReporter))]
+	[UseReporter(typeof (VisualStudioReporter))]
 	[TestClass]
 	public class Collections : Koans
 	{
