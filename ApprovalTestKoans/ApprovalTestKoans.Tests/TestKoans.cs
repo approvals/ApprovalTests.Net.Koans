@@ -2,6 +2,7 @@
 using ApprovalTestKoans.Helpers;
 using ApprovalTestKoans.Lesson01;
 using ApprovalTestKoans.Lesson02;
+using ApprovalTestKoans.Lesson03;
 using ApprovalTests;
 using ApprovalUtilities.Utilities;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -37,6 +38,16 @@ namespace ApprovalTestKoans.Tests
 			VerifyKoan<Collections>(k => k.TransformingArraysManually, 5);
 			VerifyKoan<Collections>(k => k.TransformingArraysWithLambdas, "{0}^2 = {1}");
 
+		}
+		[TestMethod]
+		public void TestApprovingTheResult()
+		{
+			VerifyKoanIsUnsolved<ApprovingTheResult>(k => k.RenameTheApproved);
+			VerifyKoanIsUnsolved<ApprovingTheResult>(k => k.SaveAsApproved);
+			VerifyKoanIsUnsolved<ApprovingTheResult>(k => k.MoveTheFileViaCommandLine);
+			VerifyKoanIsUnsolved<ApprovingTheResult>(k => k.CopyAndPasteContentInVisualStudio);
+			VerifyKoanIsUnsolved<ApprovingTheResult>(k => k.UseWholeFileInADiffReporter);
+			
 		}
 
 		private void VerifyKoanIsUnsolved<T>(Func<T, Action> method) where T : Koans, new()
