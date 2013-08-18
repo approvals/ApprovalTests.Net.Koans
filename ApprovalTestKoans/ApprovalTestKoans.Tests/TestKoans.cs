@@ -35,6 +35,7 @@ namespace ApprovalTestKoans.Tests
 			VerifyKoanIsUnsolved<Collections>(k => k.ApprovalHelpShowWhenThingsHaveBeenAdded);
 			VerifyKoan<Collections>(k => k.HeadersHelpExplainTheContextWhenThingsAreConfusing, "Numbers in the Fibonacci sequence");
 			VerifyKoan<Collections>(k => k.TransformingArraysManually, 5);
+			VerifyKoan<Collections>(k => k.TransformingArraysWithLambdas, "{0}^2 = {1}");
 
 		}
 

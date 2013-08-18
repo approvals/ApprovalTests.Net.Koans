@@ -128,7 +128,7 @@ namespace ApprovalTestKoans.Lesson02
 		public void TransformingArraysWithLambdas()
 		{
 			int[] numbers = {1, 3, 5, 10, 12, 16};
-			Approvals.VerifyAll("Squares", numbers, i => "{0}^2 = {1}".FormatWith(i, i*i));
+			Approvals.VerifyAll("Squares", numbers, i => ___.FormatWith(i, i*i));
 		}
 	}
 }
