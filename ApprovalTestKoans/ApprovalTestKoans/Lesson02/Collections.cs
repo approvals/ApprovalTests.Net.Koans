@@ -88,28 +88,29 @@ namespace ApprovalTestKoans.Lesson02
 			Approvals.VerifyAll(m);
 		}
 
-//  @Test
-//  public void ApprovalHelpShowWhenThingsHaveBeenAdded() throws Exception
-//  {
-//    HashMap<String, String> punch = new HashMap<String, String>();
-//    punch.put("Orange Juice", "2 cups");
-//    punch.put("Lime Juice", "1/2 cup");
-//    punch.put("Fruit Juice", "1 cup");
-//    punch.put("Strawberries", "20");
-//    punch.put("Mint leaves", "3");
-//    punch.put("Sprite", "2 cups");
-//    //punch.put(___,___); // <-- Uncomment Line to solve
-//    Approvals.verify(punch);
-//  }
-//  @Test
-//  public void HeadersHelpExplainTheContextWhenThingsAreConfusing() throws Exception
-//  {
-//    String header = ___;
-//    Integer[] values = {1, 2, 6, 9, 11};
-//    Approvals.verifyAll(header, values, new Sequence());
-//  }
-//  @Test
-//  public void TransformingArraysManually() throws Exception
+		[TestMethod]
+		public void ApprovalHelpShowWhenThingsHaveBeenAdded()
+		{
+			var punch = new Dictionary<string, string>();
+			punch["Orange Juice"] = "2 cups";
+			punch["Lime Juice"] = "1/2 cup";
+			punch["Fruit Juice"] = "1 cup";
+			punch["Strawberries"] = "20";
+			punch["Mint leaves"] = "3";
+			punch["Sprite"] = "2 cups";
+			//punch[___] = ___; // <-- Uncomment Line to solve
+			Approvals.VerifyAll(punch);
+		}
+
+		[TestMethod]
+  public void HeadersHelpExplainTheContextWhenThingsAreConfusing() 
+  {
+    string header = ___;
+    int[] values = {1, 2, 6, 9, 11};
+    Approvals.VerifyAll(header, values, Sequence.Print);
+  }
+//		[TestMethod]
+//  public void TransformingArraysManually() 
 //  {
 //    int[] numbers = {1, 3, ____, 10, 12, 16};
 //    StringBuffer b = new StringBuffer();
@@ -119,8 +120,8 @@ namespace ApprovalTestKoans.Lesson02
 //    }
 //    Approvals.verify(b);
 //  }
-//  @Test
-//  public void TransformingArraysWithFunctions() throws Exception
+//		[TestMethod]
+//  public void TransformingArraysWithFunctions() 
 //  {
 //    Integer[] numbers = {1, 3, 5, 10, 12, 16};
 //    Approvals.verifyAll("Squares", numbers, new Function1<Integer, String>()
@@ -131,8 +132,8 @@ namespace ApprovalTestKoans.Lesson02
 //      }
 //    });
 //  }
-//  @Test
-//  public void TransformingArraysWithLambdas() throws Exception
+//		[TestMethod]
+//  public void TransformingArraysWithLambdas() 
 //  {
 //    // This requires java8
 //    Integer[] numbers = {1, 3, 5, 10, 12, 16};

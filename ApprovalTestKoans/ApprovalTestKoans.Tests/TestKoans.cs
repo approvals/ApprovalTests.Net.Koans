@@ -32,6 +32,7 @@ namespace ApprovalTestKoans.Tests
 			VerifyKoan<Collections>(k => k.DictionariesAreSortedBeforeDisplay, "L");
 			VerifyKoan<Collections>(k => k.TheUseOfTheLabel, "TV Show");
 			VerifyKoan<Collections>(k => k.ApprovalHelpShowWhenThingsHaveBeenRemoved, "Mr. Green");
+			VerifyKoanIsUnsolved<Collections>(k => k.ApprovalHelpShowWhenThingsHaveBeenAdded);
 
 		}
 

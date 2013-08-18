@@ -58,6 +58,7 @@
   </Choose>
   <ItemGroup>
     <Compile Include="Helpers\Koans.cs" />
+    <Compile Include="Helpers\Sequence.cs" />
     <Compile Include="Lesson01\GettingStarted.cs" />
     <Compile Include="Helpers\Person.cs" />
     <Compile Include="Lesson02\Collections.cs" />
