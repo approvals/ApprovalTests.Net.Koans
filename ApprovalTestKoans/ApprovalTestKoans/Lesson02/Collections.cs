@@ -25,14 +25,14 @@ namespace ApprovalTestKoans.Lesson02
 		[TestMethod]
 		public void SimpleArrays()
 		{
-			String[] approvalsIsPortedTo = {___, "Java", "Perl", "Ruby", "Php", "Node.js"};
+			string[] approvalsIsPortedTo = {___, "Java", "Perl", "Ruby", "Php", "Node.js"};
 			Approvals.VerifyAll(approvalsIsPortedTo, "Language");
 		}
 
 		[TestMethod]
   public void ListsWorkTheSameAsArrays() 
   {
-    var approvalsIsGoodFor = new List<String>();
+    var approvalsIsGoodFor = new List<string>();
     approvalsIsGoodFor.Add("Strings");
     approvalsIsGoodFor.Add("Objects");
     approvalsIsGoodFor.Add("Log Files");
@@ -50,19 +50,19 @@ namespace ApprovalTestKoans.Lesson02
     approvalsIsGoodFor.Add("Email");
     Approvals.VerifyAll( approvalsIsGoodFor,"Good For");
   }
-//  @Test
-//  public void MapsAreSortedBeforeDisplay() throws Exception
-//  {
-//    HashMap<Integer, String> m = new HashMap<Integer, String>();
-//    m.put(1000, "M");
-//    m.put(10, "X");
-//    m.put(1, "I");
-//    m.put(100, "C");
-//    m.put(5, "V");
-//    m.put(500, "D");
-//    m.put(50, ___);
-//    Approvals.verify(m);
-//  }
+		[TestMethod]
+		public void DictionariesAreSortedBeforeDisplay()
+  {
+    var m = new Dictionary<int, string>();
+    m[1000]= "M";
+    m[10]= "X";
+    m[1]= "I";
+    m[100]= "C";
+    m[5]= "V";
+    m[500]= "D";
+    m[50]= ___;
+    Approvals.VerifyAll(m);
+  }
 //  @Test
 //  public void TheUseOfTheLabel() throws Exception
 //  {

@@ -29,6 +29,7 @@ namespace ApprovalTestKoans.Tests
 		{
 			VerifyKoan<Collections>(k => k.SimpleArrays, ".Net");
 			VerifyKoan<Collections>(k => k.ListsWorkTheSameAsArrays, "Collections");
+			VerifyKoan<Collections>(k => k.DictionariesAreSortedBeforeDisplay, "L");
 
 		}
 
