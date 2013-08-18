@@ -8,22 +8,41 @@ using Approvals = ApprovalTests.Approvals;
 namespace ApprovalTestKoans.Lesson04
 {
 	[TestClass]
-	public class UsingReporters : Koans
+	[UseReporter(typeof (MsTestReporter))]
+	public class ConfiguringReporters : Koans
 	{
 		[TestMethod]
 		[UseReporter(typeof (_____))]
-		public void ConfiguringTheFileLauncherReporter()
+		public void ConfiguringTheFileLauncherReporterAtTheMethodLevel()
 		{
 			var reporter = Approvals.GetReporter();
 			Assert.IsInstanceOfType(reporter, typeof (FileLauncherReporter));
 		}
 
-//  [TestMethod]
-//  public void ConfiguringAClassLevelDefault() 
-//  {
-//    var reporter = ReporterFactory.getFromAnnotation();
-//    Assert.assertTrue(reporter.getClass().getName(), reporter instanceof _____);
-//  }
+		[TestMethod]
+		public void ConfiguringAClassLevelDefault()
+		{
+			var reporter = Approvals.GetReporter();
+			Assert.IsInstanceOfType(reporter, typeof (_____));
+		}
+	}
+
+	[TestClass]
+	public class ConfiguringReportersPart2 : Koans
+	{
+		[TestMethod]
+		public void ConfiguringAnAssemblyLevelDefault()
+		{
+			var reporter = Approvals.GetReporter();
+			Assert.IsInstanceOfType(reporter, typeof (DiffReporter));
+			// Hint: The blank for this problem is in the AssemblyInfo.cs file
+		}
+	}
+
+	[TestClass]
+	[UseReporter(typeof (MsTestReporter))]
+	public class UsingReporters : Koans
+	{
 //  [TestMethod]
 // [UseReporter(typeof({ClipboardReporter.class, ImageWebReporter.class, TortoiseImageDiffReporter.class})
 //  public void ConfiguringMultipleReporters() 

@@ -53,7 +53,9 @@ namespace ApprovalTestKoans.Tests
 		[TestMethod]
 		public void TestUsingReporters()
 		{
-			VerifyKoanIsUnsolved<UsingReporters>(k => k.ConfiguringTheFileLauncherReporter);
+			VerifyKoanIsUnsolved<ConfiguringReporters>(k => k.ConfiguringTheFileLauncherReporterAtTheMethodLevel);
+			VerifyKoanIsUnsolved<ConfiguringReporters>(k => k.ConfiguringAClassLevelDefault);
+			VerifyKoanIsUnsolved<ConfiguringReportersPart2>(k => k.ConfiguringAnAssemblyLevelDefault);
 		}
 
 		private void VerifyKoanIsUnsolved<T>(Func<T, Action> method) where T : Koans, new()
