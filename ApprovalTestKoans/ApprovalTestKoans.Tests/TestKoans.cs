@@ -60,7 +60,7 @@ namespace ApprovalTestKoans.Tests
 			{
 				if (exception != null)
 				{
-					throw exception;
+					throw new Exception("Did Not Pass",exception);
 				}
 			}
 			else

@@ -4,6 +4,7 @@ using ApprovalTestKoans.Helpers;
 using ApprovalTests;
 using ApprovalTests.Reporters;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using ApprovalUtilities.Utilities;
 
 namespace ApprovalTestKoans.Lesson02
 {
@@ -123,24 +124,11 @@ namespace ApprovalTestKoans.Lesson02
 			Approvals.Verify(b);
 		}
 
-//		[TestMethod]
-//  public void TransformingArraysWithFunctions() 
-//  {
-//    Integer[] numbers = {1, 3, 5, 10, 12, 16};
-//    Approvals.verifyAll("Squares", numbers, new Function1<Integer, String>()
-//    {
-//      public String call(Integer i)
-//      {
-//        return ___;
-//      }
-//    });
-//  }
-//		[TestMethod]
-//  public void TransformingArraysWithLambdas() 
-//  {
-//    // This requires java8
-//    Integer[] numbers = {1, 3, 5, 10, 12, 16};
-//    Approvals.verifyAll("Squares", numbers, n -> ___);
-//  }
+		[TestMethod]
+		public void TransformingArraysWithLambdas()
+		{
+			int[] numbers = {1, 3, 5, 10, 12, 16};
+			Approvals.VerifyAll("Squares", numbers, i => "{0}^2 = {1}".FormatWith(i, i*i));
+		}
 	}
 }

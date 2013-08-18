@@ -70,6 +70,8 @@
   <ItemGroup>
     <Content Include="Lesson01\GettingStarted.ApprovalHidesTheExpectation.approved.txt" />
     <Content Include="Lesson01\GettingStarted.ChangingTheGoldenMaster.approved.txt" />
+    <Content Include="Lesson01\GettingStarted.SometimeYouNeedABetterToString.approved.txt" />
+    <Content Include="Lesson01\GettingStarted.VerifyObjects.approved.txt" />
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
