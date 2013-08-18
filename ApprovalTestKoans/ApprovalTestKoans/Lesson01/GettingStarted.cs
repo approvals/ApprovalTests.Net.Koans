@@ -1,4 +1,5 @@
-﻿using ApprovalTestKoans.Helpers;
+﻿using System.Drawing;
+using ApprovalTestKoans.Helpers;
 using ApprovalTests;
 using ApprovalTests.Reporters;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -39,7 +40,7 @@ namespace ApprovalTestKoans.Lesson01
 			Assert.AreEqual(namer.Name, ___);
 		}
 		[TestMethod]
-		public void ____()
+		public void _____()
 		{
 			var namer = Approvals.GetDefaultNamer();
 			Assert.AreEqual(namer.Name, "GettingStarted.UsesMethodName");
@@ -53,29 +54,22 @@ namespace ApprovalTestKoans.Lesson01
 			string approvalName = className + "." + methodName;
 			Assert.AreEqual(namer.Name, approvalName);
 		}
-//		@Test
-//		public
-//		void ChangingTheGoldenMaster 
-//		()
-//		throws
-//		Exception
-//		{
-//			Approvals.verify("This is the golden master");
-//		}
-//		@Test
-//		public
-//		void VerifyObjects 
-//		()
-//		throws
-//		Exception
-//		{
-//			Rectangle r = new Rectangle();
-//			r.width = 40;
-//			r.height = 100;
-//			r.x = ____;
-//			r.y = 200;
-//			Approvals.verify(r);
-//		}
+		[TestMethod]
+		public void ChangingTheGoldenMaster ()
+		{
+			Approvals.Verify("This is the golden master");
+			//Hint: What is the name of the file where the blank is?
+		}
+		[TestMethod]
+		public void VerifyObjects ()
+		{
+			Rectangle r = new Rectangle();
+			r.Width = 40;
+			r.Height = 100;
+			r.X = ____;
+			r.Y = 200;
+			Approvals.Verify(r);
+		}
 //		@Test
 //		public
 //		void SometimeYouNeedABetterToString 

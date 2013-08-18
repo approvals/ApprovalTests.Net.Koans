@@ -15,8 +15,10 @@ namespace ApprovalTestKoans.Tests
 			VerifyKoan<GettingStarted>(k => k.NormalAsserts, "Small String");
 			VerifyKoan<GettingStarted>(k => k.ApprovalHidesTheExpectation, "This is in the approved file");
 			VerifyKoan<GettingStarted>(k => k.ApprovalFileName, "GettingStarted.ApprovalFileName");
-			VerifyKoanIsUnsolved<GettingStarted>(k => k.ApprovalFileName);
+			VerifyKoanIsUnsolved<GettingStarted>(k => k._____);
 			VerifyKoan<GettingStarted>(k => k.FileNames, "GettingStarted");
+			VerifyKoanIsUnsolved<GettingStarted>(k => k.ChangingTheGoldenMaster);
+			VerifyKoan<GettingStarted>(k => k.VerifyObjects, 150);
 		}
 
 		private void VerifyKoanIsUnsolved<T>(Func<T, Action> method) where T : Koans, new()
@@ -24,11 +26,12 @@ namespace ApprovalTestKoans.Tests
 			RunKoan(method, new T(), pass: false);
 		}
 
-		private void VerifyKoan<T>(Func<T, Action> method, string answer) where T : Koans, new()
+		private void VerifyKoan<T>(Func<T, Action> method, object answer) where T : Koans, new()
 		{
 			VerifyKoanIsUnsolved(method);
 			var k = new T();
-			k.___ = answer;
+			k.___ = answer as string;
+			k.____ =  (int) (answer is int ? answer:0);
 			RunKoan(method, k, pass: true);
 		}
 

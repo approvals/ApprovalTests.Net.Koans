@@ -42,6 +42,7 @@
       <HintPath>..\packages\ApprovalUtilities.3.0.01\lib\net35\ApprovalUtilities.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Drawing" />
   </ItemGroup>
   <Choose>
     <When Condition="('$(VisualStudioVersion)' == '10.0' or '$(VisualStudioVersion)' == '') and '$(TargetFrameworkVersion)' == 'v3.5'">
@@ -62,6 +63,10 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Lesson01\GettingStarted.ApprovalHidesTheExpectation.approved.txt" />
+    <Content Include="Lesson01\GettingStarted.ChangingTheGoldenMaster.approved.txt" />
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
