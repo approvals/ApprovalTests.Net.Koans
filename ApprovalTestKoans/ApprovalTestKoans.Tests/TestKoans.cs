@@ -33,6 +33,8 @@ namespace ApprovalTestKoans.Tests
 			VerifyKoan<Collections>(k => k.TheUseOfTheLabel, "TV Show");
 			VerifyKoan<Collections>(k => k.ApprovalHelpShowWhenThingsHaveBeenRemoved, "Mr. Green");
 			VerifyKoanIsUnsolved<Collections>(k => k.ApprovalHelpShowWhenThingsHaveBeenAdded);
+			VerifyKoan<Collections>(k => k.HeadersHelpExplainTheContextWhenThingsAreConfusing, "Numbers in the Fibonacci sequence");
+			VerifyKoan<Collections>(k => k.TransformingArraysManually, 5);
 
 		}
 

@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Text;
 using ApprovalTestKoans.Helpers;
 using ApprovalTests;
 using ApprovalTests.Reporters;
@@ -103,23 +104,25 @@ namespace ApprovalTestKoans.Lesson02
 		}
 
 		[TestMethod]
-  public void HeadersHelpExplainTheContextWhenThingsAreConfusing() 
-  {
-    string header = ___;
-    int[] values = {1, 2, 6, 9, 11};
-    Approvals.VerifyAll(header, values, Sequence.Print);
-  }
-//		[TestMethod]
-//  public void TransformingArraysManually() 
-//  {
-//    int[] numbers = {1, 3, ____, 10, 12, 16};
-//    StringBuffer b = new StringBuffer();
-//    for (int i : numbers)
-//    {
-//      b.append(String.format("%s^2 = %s\n", i, i * i));
-//    }
-//    Approvals.verify(b);
-//  }
+		public void HeadersHelpExplainTheContextWhenThingsAreConfusing()
+		{
+			string header = ___;
+			int[] values = {1, 2, 6, 9, 11};
+			Approvals.VerifyAll(header, values, Sequence.Print);
+		}
+
+		[TestMethod]
+		public void TransformingArraysManually()
+		{
+			int[] numbers = {1, 3, ____, 10, 12, 16};
+			var b = new StringBuilder();
+			foreach (int i in numbers)
+			{
+				b.AppendFormat("{0}^2 = {1}\n", i, i*i);
+			}
+			Approvals.Verify(b);
+		}
+
 //		[TestMethod]
 //  public void TransformingArraysWithFunctions() 
 //  {
