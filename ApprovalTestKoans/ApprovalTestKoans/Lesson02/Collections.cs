@@ -119,7 +119,7 @@ namespace ApprovalTestKoans.Lesson02
 			var b = new StringBuilder();
 			foreach (int i in numbers)
 			{
-				b.AppendFormat("{0}^2 = {1}\n", i, i*i);
+				b.AppendFormat("{0}^2 = {1}\r\n", i, i*i);
 			}
 			Approvals.Verify(b);
 		}

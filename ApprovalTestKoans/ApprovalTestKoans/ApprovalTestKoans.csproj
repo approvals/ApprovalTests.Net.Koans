@@ -63,6 +63,7 @@
     <Compile Include="Helpers\Person.cs" />
     <Compile Include="Lesson02\Collections.cs" />
     <Compile Include="Lesson03\ApprovingTheResult.cs" />
+    <Compile Include="Lesson04\UsingReporters.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

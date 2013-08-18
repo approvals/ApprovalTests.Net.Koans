@@ -3,7 +3,7 @@ using ApprovalTestKoans.Helpers;
 using ApprovalTestKoans.Lesson01;
 using ApprovalTestKoans.Lesson02;
 using ApprovalTestKoans.Lesson03;
-using ApprovalTests;
+using ApprovalTestKoans.Lesson04;
 using ApprovalUtilities.Utilities;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
@@ -34,11 +34,12 @@ namespace ApprovalTestKoans.Tests
 			VerifyKoan<Collections>(k => k.TheUseOfTheLabel, "TV Show");
 			VerifyKoan<Collections>(k => k.ApprovalHelpShowWhenThingsHaveBeenRemoved, "Mr. Green");
 			VerifyKoanIsUnsolved<Collections>(k => k.ApprovalHelpShowWhenThingsHaveBeenAdded);
-			VerifyKoan<Collections>(k => k.HeadersHelpExplainTheContextWhenThingsAreConfusing, "Numbers in the Fibonacci sequence");
+			VerifyKoan<Collections>(k => k.HeadersHelpExplainTheContextWhenThingsAreConfusing,
+			                        "Numbers in the Fibonacci sequence");
 			VerifyKoan<Collections>(k => k.TransformingArraysManually, 5);
 			VerifyKoan<Collections>(k => k.TransformingArraysWithLambdas, "{0}^2 = {1}");
-
 		}
+
 		[TestMethod]
 		public void TestApprovingTheResult()
 		{
@@ -47,7 +48,12 @@ namespace ApprovalTestKoans.Tests
 			VerifyKoanIsUnsolved<ApprovingTheResult>(k => k.MoveTheFileViaCommandLine);
 			VerifyKoanIsUnsolved<ApprovingTheResult>(k => k.CopyAndPasteContentInVisualStudio);
 			VerifyKoanIsUnsolved<ApprovingTheResult>(k => k.UseWholeFileInADiffReporter);
-			
+		}
+
+		[TestMethod]
+		public void TestUsingReporters()
+		{
+			VerifyKoanIsUnsolved<UsingReporters>(k => k.ConfiguringTheFileLauncherReporter);
 		}
 
 		private void VerifyKoanIsUnsolved<T>(Func<T, Action> method) where T : Koans, new()
@@ -60,7 +66,7 @@ namespace ApprovalTestKoans.Tests
 			VerifyKoanIsUnsolved(method);
 			var k = new T();
 			k.___ = answer as string;
-			k.____ =  (int) (answer is int ? answer:0);
+			k.____ = (int) (answer is int ? answer : 0);
 			RunKoan(method, k, pass: true);
 		}
 
@@ -72,7 +78,7 @@ namespace ApprovalTestKoans.Tests
 			{
 				if (exception != null)
 				{
-					throw new Exception("Did Not Pass",exception);
+					throw new Exception("Did Not Pass", exception);
 				}
 			}
 			else
