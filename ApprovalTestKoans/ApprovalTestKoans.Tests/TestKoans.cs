@@ -1,6 +1,7 @@
 ﻿using System;
 using ApprovalTestKoans.Helpers;
 using ApprovalTestKoans.Lesson01;
+using ApprovalUtilities.Utilities;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace ApprovalTestKoans.Tests
@@ -11,34 +12,37 @@ namespace ApprovalTestKoans.Tests
 		[TestMethod]
 		public void TestGettingStarted()
 		{
-			//verify koan
 			verifyKoan<GettingStarted>(k => k.NormalAsserts, "Small String");
+			verifyKoan<GettingStarted>(k => k.ApprovalHidesTheExpectation, "This is in the approved file");
+			verifyKoan<GettingStarted>(k => k.ApprovalFileName, "GettingStarted.ApprovalFileName");
 		}
 
-		private void verifyKoan<T>(Func<T, Action> method, string answer) where T:Koans, new()
+		private void verifyKoan<T>(Func<T, Action> method, string answer) where T : Koans, new()
 		{
-			//make sure the test fails
-			Assert.IsTrue(RunKoan(method, new T()));
-			//make sure the test succeeds
+			RunKoan(method, new T(), pass: false);
 			var k = new T();
-			k.___= answer;
-			Assert.IsFalse(RunKoan(method, k));
-
+			k.___ = answer;
+			RunKoan(method, k, pass: true);
 		}
 
-		private static bool RunKoan<T>(Func<T, Action> method, T k) where T : Koans, new()
-		{
-			var failed = false;
-			try
-			{
-				method(k).Invoke();
-			}
-			catch (Exception)
 
+		private static void RunKoan<T>(Func<T, Action> method, T k, bool pass) where T : Koans, new()
+		{
+			Exception exception = ExceptionUtilities.GetException(() => method(k).Invoke());
+			if (pass)
 			{
-				failed = true;
+				if (exception != null)
+				{
+					throw exception;
+				}
 			}
-			return failed;
+			else
+			{
+				if (exception == null)
+				{
+					Assert.Fail("The method {0} is already passing".FormatWith(method.Method.Name));
+				}
+			}
 		}
 	}
 }

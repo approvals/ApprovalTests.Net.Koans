@@ -1,4 +1,5 @@
 ﻿using ApprovalTestKoans.Helpers;
+using ApprovalTests;
 using ApprovalTests.Reporters;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
@@ -25,26 +26,18 @@ namespace ApprovalTestKoans.Lesson01
 			Assert.AreEqual("Small String", ___);
 		}
 
-//		@Test
-//		public
-//		void ApprovalHidesTheExpectation 
-//		()
-//		throws
-//		Exception
-//		{
-//			Approvals.verify(___);
-//			// Hint: If you double click the 1st line of the Failure Trace a diff tool will open
-//		}
-//		@Test
-//		public
-//		void ApprovalFileName 
-//		()
-//		throws
-//		Exception
-//		{
-//			ApprovalNamer namer = Approvals.createApprovalNamer();
-//			Assert.assertEquals(namer.getApprovalName(), ___);
-//		}
+		[TestMethod]
+		public void ApprovalHidesTheExpectation()
+		{
+			Approvals.Verify(___);
+			// Hint: If you double click the 1st line of the Failure Trace a diff tool will open
+		}
+		[TestMethod]
+		public void ApprovalFileName()
+		{
+			var namer = Approvals.GetDefaultNamer();
+			Assert.AreEqual(namer.Name, ___);
+		}
 //		@Test
 //		public
 //		void ___ 
