@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using ApprovalTestKoans.Helpers;
 using ApprovalTests;
 using ApprovalTests.Reporters;
@@ -28,21 +29,27 @@ namespace ApprovalTestKoans.Lesson02
 			Approvals.VerifyAll(approvalsIsPortedTo, "Language");
 		}
 
-//  @Test
-//  public void ListsWorkTheSameAsArrays() throws Exception
-//  {
-//    List<String> approvalsIsGoodFor = new ArrayList<String>();
-//    approvalsIsGoodFor.add("Strings");
-//    approvalsIsGoodFor.add("Objects");
-//    approvalsIsGoodFor.add("Log Files");
-//    approvalsIsGoodFor.add("JPanels");
-//    approvalsIsGoodFor.add(___);
-//    approvalsIsGoodFor.add("Xml");
-//    approvalsIsGoodFor.add("Html");
-//    approvalsIsGoodFor.add("Json");
-//    approvalsIsGoodFor.add("Email");
-//    Approvals.verifyAll("Good For", approvalsIsGoodFor);
-//  }
+		[TestMethod]
+  public void ListsWorkTheSameAsArrays() 
+  {
+    var approvalsIsGoodFor = new List<String>();
+    approvalsIsGoodFor.Add("Strings");
+    approvalsIsGoodFor.Add("Objects");
+    approvalsIsGoodFor.Add("Log Files");
+    approvalsIsGoodFor.Add("WinForms");
+    approvalsIsGoodFor.Add("WPF");
+    approvalsIsGoodFor.Add("RDLC Reports");
+    approvalsIsGoodFor.Add("ASP Pages");
+    approvalsIsGoodFor.Add("ASP.MVC Pages");
+    approvalsIsGoodFor.Add("ASP Routes");
+    approvalsIsGoodFor.Add("Entity Framework Queries");
+    approvalsIsGoodFor.Add(___);
+    approvalsIsGoodFor.Add("Xml");
+    approvalsIsGoodFor.Add("Html");
+    approvalsIsGoodFor.Add("Json");
+    approvalsIsGoodFor.Add("Email");
+    Approvals.VerifyAll( approvalsIsGoodFor,"Good For");
+  }
 //  @Test
 //  public void MapsAreSortedBeforeDisplay() throws Exception
 //  {
