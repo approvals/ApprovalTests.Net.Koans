@@ -19,6 +19,7 @@ namespace ApprovalTestKoans.Tests
 			VerifyKoan<GettingStarted>(k => k.FileNames, "GettingStarted");
 			VerifyKoanIsUnsolved<GettingStarted>(k => k.ChangingTheGoldenMaster);
 			VerifyKoan<GettingStarted>(k => k.VerifyObjects, 150);
+			VerifyKoan<GettingStarted>(k => k.SometimeYouNeedABetterToString, "Cobb");
 		}
 
 		private void VerifyKoanIsUnsolved<T>(Func<T, Action> method) where T : Koans, new()

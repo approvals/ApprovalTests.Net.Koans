@@ -1,4 +1,5 @@
-﻿using System.Drawing;
+﻿using System;
+using System.Drawing;
 using ApprovalTestKoans.Helpers;
 using ApprovalTests;
 using ApprovalTests.Reporters;
@@ -33,18 +34,21 @@ namespace ApprovalTestKoans.Lesson01
 			Approvals.Verify(___);
 			// Hint: If you double click the 1st line of the Failure Trace a diff tool will open
 		}
+
 		[TestMethod]
 		public void ApprovalFileName()
 		{
 			var namer = Approvals.GetDefaultNamer();
 			Assert.AreEqual(namer.Name, ___);
 		}
+
 		[TestMethod]
 		public void _____()
 		{
 			var namer = Approvals.GetDefaultNamer();
 			Assert.AreEqual(namer.Name, "GettingStarted.UsesMethodName");
 		}
+
 		[TestMethod]
 		public void FileNames()
 		{
@@ -54,14 +58,16 @@ namespace ApprovalTestKoans.Lesson01
 			string approvalName = className + "." + methodName;
 			Assert.AreEqual(namer.Name, approvalName);
 		}
+
 		[TestMethod]
-		public void ChangingTheGoldenMaster ()
+		public void ChangingTheGoldenMaster()
 		{
 			Approvals.Verify("This is the golden master");
 			//Hint: What is the name of the file where the blank is?
 		}
+
 		[TestMethod]
-		public void VerifyObjects ()
+		public void VerifyObjects()
 		{
 			Rectangle r = new Rectangle();
 			r.Width = 40;
@@ -70,18 +76,14 @@ namespace ApprovalTestKoans.Lesson01
 			r.Y = 200;
 			Approvals.Verify(r);
 		}
-//		@Test
-//		public
-//		void SometimeYouNeedABetterToString 
-//		()
-//		throws
-//		Exception
-//		{
-//			Person p = new Person("jane", "smith", true, 38);
-//			String format = "Person\n  FirstName:%s\n  LastName:%s\n  Sex:%s\n  Age:%s\n";
-//			String custom = String.format(format, p.getFirstName(), ___, p.isMale() ? "Male" : "Female", p.getAge());
-//			Approvals.verify(custom);
-//		}
-//	}
+
+		[TestMethod]
+		public void SometimeYouNeedABetterToString()
+		{
+			var p = new Person("Jayne", "Cobb", true, 38);
+			string format = "Person\n  FirstName:{0}\n  LastName:{1}\n  Sex:{2}\n  Age:{3}\n";
+			string custom = String.Format(format, p.FirstName, ___, p.IsMale ? "Male" : "Female", p.Age);
+			Approvals.Verify(custom);
+		}
 	}
 }

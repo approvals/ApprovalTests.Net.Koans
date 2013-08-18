@@ -59,6 +59,7 @@
   <ItemGroup>
     <Compile Include="Helpers\Koans.cs" />
     <Compile Include="Lesson01\GettingStarted.cs" />
+    <Compile Include="Helpers\Person.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
