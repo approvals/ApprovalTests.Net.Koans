@@ -1,6 +1,0 @@
-﻿Colonel Mustard => Kitchen
-Miss Scarlet => Conservitory
-Mr. Green => Library
-Mrs. Peacock => Dining Room
-Mrs. White => Billiard Room
-Professor Plum => Study
