@@ -1,0 +1,9 @@
+Good For[0] = Strings
+Good For[1] = Objects
+Good For[2] = Log Files
+Good For[3] = JPanels
+Good For[4] = Collections
+Good For[5] = Xml
+Good For[6] = Html
+Good For[7] = Json
+Good For[8] = Email

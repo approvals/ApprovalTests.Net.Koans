@@ -1,6 +1,7 @@
 ﻿using System;
 using ApprovalTestKoans.Helpers;
 using ApprovalTestKoans.Lesson01;
+using ApprovalTestKoans.Lesson02;
 using ApprovalUtilities.Utilities;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
@@ -20,6 +21,13 @@ namespace ApprovalTestKoans.Tests
 			VerifyKoanIsUnsolved<GettingStarted>(k => k.ChangingTheGoldenMaster);
 			VerifyKoan<GettingStarted>(k => k.VerifyObjects, 150);
 			VerifyKoan<GettingStarted>(k => k.SometimeYouNeedABetterToString, "Cobb");
+		}
+
+		[TestMethod]
+		public void TestCollections()
+		{
+			VerifyKoan<Collections>(k => k.SimpleArrays, ".Net");
+
 		}
 
 		private void VerifyKoanIsUnsolved<T>(Func<T, Action> method) where T : Koans, new()

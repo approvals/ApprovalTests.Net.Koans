@@ -1,0 +1,8 @@
+Numbers in the Fibonacci sequence
+
+
+#1 => 1
+#2 => 2
+#6 => 13
+#9 => 55
+#11 => 144
