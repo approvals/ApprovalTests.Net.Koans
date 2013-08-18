@@ -2,6 +2,7 @@
 using ApprovalTestKoans.Helpers;
 using ApprovalTestKoans.Lesson01;
 using ApprovalTestKoans.Lesson02;
+using ApprovalTests;
 using ApprovalUtilities.Utilities;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
