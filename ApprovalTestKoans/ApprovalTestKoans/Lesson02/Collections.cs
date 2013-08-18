@@ -63,13 +63,13 @@ namespace ApprovalTestKoans.Lesson02
     m[50]= ___;
     Approvals.VerifyAll(m);
   }
-//  @Test
-//  public void TheUseOfTheLabel() throws Exception
-//  {
-//    String[] greatTv = {
-//        "Firefly", "Game of Throne", "Futurama", "Arrested Development", "Big Bang Theory", "Better Off Ted"};
-//    Approvals.verifyAll(___, greatTv);
-//  }
+		[TestMethod]
+  public void TheUseOfTheLabel() 
+  {
+    string[] greatTv = {
+        "Firefly", "Game of Throne", "Futurama", "Arrested Development", "Big Bang Theory", "Better Off Ted"};
+    Approvals.VerifyAll( greatTv,___);
+  }
 //  @Test
 //  public void ApprovalHelpShowWhenThingsHaveBeenRemoved() throws Exception
 //  {
