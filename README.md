@@ -1,4 +1,4 @@
-# Welcome to the ApprovalTests Java Koans #
+# Welcome to the ApprovalTests .Net Koans #
 _"Learn by Doing"_  
 27 progressive examples to help you learn Approval Tests  
 By: Llewellyn Falco 
@@ -19,8 +19,8 @@ These Koans are an interactive and fun way to be introduced to and learn how to 
  
 
 **Getting Started**  
-Download the zip, expand it & import it into eclipse. 
-Run the unit test, see it fail, then  Fill in the blank ("____") Run it again to see it pass.
+Download the zip, expand it and open the solution file in Visual Studio. 
+Run the unit test, see it fail, then fill in the blank ("____") Run it again to see it pass.
 
 
 **Tips & Tricks**  
