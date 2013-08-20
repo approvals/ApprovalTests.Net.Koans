@@ -1,7 +1,10 @@
 ﻿using System;
+using System.Diagnostics;
+using System.IO;
 using ApprovalTestKoans.Helpers;
 using ApprovalTests.Core;
 using ApprovalTests.Reporters;
+using ApprovalUtilities.Utilities;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Approvals = ApprovalTests.Approvals;
 
@@ -40,18 +43,18 @@ namespace ApprovalTestKoans.Lesson04
 	}
 
 	[TestClass]
-	[UseReporter(typeof (MsTestReporter))]
 	public class UsingReporters : Koans
 	{
-//  [TestMethod]
-// [UseReporter(typeof({ClipboardReporter.class, ImageWebReporter.class, TortoiseImageDiffReporter.class})
-//  public void ConfiguringMultipleReporters() 
-//  {
-//    var  reporter = ReporterFactory.getFromAnnotation();
-//    MultiReporter multi = (MultiReporter) reporter;
-//    var  second = multi.getReporters()[1];
-//    Assert.assertTrue(second.getClass().getName(), second instanceof _____);
-//  }
+		[TestMethod]
+		[UseReporter(typeof (ClipboardReporter), typeof (ImageWebReporter), typeof (TortoiseImageDiffReporter))]
+		public void ConfiguringMultipleReporters()
+		{
+			var reporter = Approvals.GetReporter();
+			MultiReporter multi = (MultiReporter) reporter;
+			//var second = multi.Reporters[1];
+			Assert.IsInstanceOfType(reporter, typeof (_____));
+		}
+
 //  [TestMethod]
 // [UseReporter(typeof(FileLauncherReporter))]
 //  public void UsingTextReportersForInsight() 
@@ -82,6 +85,27 @@ namespace ApprovalTestKoans.Lesson04
 		public void Report(string approved, string received)
 		{
 			throw new NotImplementedException();
+		}
+	}
+
+	public class ImageWebReporter : IEnvironmentAwareReporter
+	{
+		public static ImageWebReporter INSTANCE = new ImageWebReporter();
+
+		public void Report(string approved, string received)
+		{
+			String text =
+				"<html><body><center><table border=1><tr><td><img src=\"file:///{0}\"></td><td><img src=\"file:///{1}\"></td></tr><tr><td>approved</td><td>received</td></tr></table>  {2} <br/> <b>to approve :</b> copy clipboard to command window  <br/> <font size=1>{3}</font></center></body></html>";
+			String moveText = QuietReporter.GetCommandLineForApproval(approved, received);
+			text = text.FormatWith(approved, received, received, moveText);
+			string file = Path.GetTempFileName() + ".html";
+			File.WriteAllText(file, text);
+			Process.Start(file);
+		}
+
+		public bool IsWorkingInThisEnvironment(string forFile)
+		{
+			return GenericDiffReporter.IsFileOneOf(forFile, GenericDiffReporter.IMAGE_FILE_TYPES);
 		}
 	}
 }
