@@ -1,12 +1,15 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
+using System.Reflection;
 using ApprovalTestKoans.Helpers;
 using ApprovalTests.Core;
 using ApprovalTests.Reporters;
 using ApprovalUtilities.Utilities;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Approvals = ApprovalTests.Approvals;
+using System.Linq;
 
 namespace ApprovalTestKoans.Lesson04
 {
@@ -51,8 +54,8 @@ namespace ApprovalTestKoans.Lesson04
 		{
 			var reporter = Approvals.GetReporter();
 			MultiReporter multi = (MultiReporter) reporter;
-			//var second = multi.Reporters[1];
-			Assert.IsInstanceOfType(reporter, typeof (_____));
+			var second = multi.GetReporters(1);
+			Assert.IsInstanceOfType(second, typeof (_____));
 		}
 
 //  [TestMethod]
@@ -108,4 +111,14 @@ namespace ApprovalTestKoans.Lesson04
 			return GenericDiffReporter.IsFileOneOf(forFile, GenericDiffReporter.IMAGE_FILE_TYPES);
 		}
 	}
-}
+
+	public static  class ReporterHelper
+	{
+		public static IApprovalFailureReporter GetReporters(this MultiReporter reporter, int index)
+		{
+			FieldInfo field = typeof (MultiReporter).GetField("reporters", BindingFlags.NonPublic | BindingFlags.Instance);
+			var value =(IEnumerable<IApprovalFailureReporter>)field.GetValue(reporter);
+			return value.ToArray()[index];
+		}
+	}
+	}
