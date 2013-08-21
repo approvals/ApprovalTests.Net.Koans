@@ -58,17 +58,17 @@ namespace ApprovalTestKoans.Lesson04
 			Assert.IsInstanceOfType(second, typeof (_____));
 		}
 
-//  [TestMethod]
-// [UseReporter(typeof(FileLauncherReporter))]
-//  public void UsingTextReportersForInsight() 
-//  {
-//    if (!decode("=fikpKnf").equals(____))
-//    {
-//      var  reporter = ReporterFactory.getFromAnnotation();
-//      reporter.report(getPath("Insight.txt"), "");
-//      Assert.fail("Please fill in the blank");
-//    }
-//  }
+  [TestMethod]
+ [UseReporter(typeof(FileLauncherReporter))]
+  public void UsingTextReportersForInsight() 
+  {
+    if (decode("=fikpKnf") != ___)
+    {
+			var reporter = Approvals.GetReporter();
+			reporter.Report("",PathUtilities.GetAdjacentFile("Insight.txt"));
+      Assert.Fail("Please fill in the blank");
+    }
+  }
 //  [TestMethod]
 // [UseReporter(typeof(ImageWebReporter))]
 //  public void UsingImageForInsight() 
