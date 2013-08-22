@@ -9,15 +9,18 @@ using ApprovalUtilities.Utilities;
 namespace ApprovalTestKoans.Lesson02
 {
 	/**
- * How to do Koans:
- * Step 1: Press the Run Button (Place cursor on the Method name to run a single method)
- * PC: Ctrl+F11
- * Mac: Command+fn+F11
- * Step 2: Read the name of the Method that Failed
- * Step 3: Fill in the blank (___) to make it pass
- * Step 4: Repeat Until Enlightenment
- * Do not change anything except the blank (___)
- */
+		* How to do Koans:
+		* Step 1: Run Test Ctrl+R, (Not Ctrl)T (Click on the method to only run that test)
+		* TroubleShoot : Ctrl+R, Ctrl+T will run in debug mode.
+		* Step 2: Read the name of the Method that Failed, try to run 1 at a time.
+		* Step 3: Fill in the blank (___) to make it pass
+		* TroubleShoot: Do not change anything except the blank (___)
+		* Step 4: Reflect for Enlightenment
+	  * Step 5: Continue
+		* 
+		* NOTE: Each example builds on one another
+		* 
+		*/
 
 	[UseReporter(typeof (VisualStudioReporter))]
 	[TestClass]

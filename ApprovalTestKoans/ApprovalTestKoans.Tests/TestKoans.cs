@@ -20,7 +20,7 @@ namespace ApprovalTestKoans.Tests
 			VerifyKoan<GettingStarted>(k => k.ApprovalFileName, "GettingStarted.ApprovalFileName");
 			VerifyKoanIsUnsolved<GettingStarted>(k => k._____);
 			VerifyKoan<GettingStarted>(k => k.FileNames, "GettingStarted");
-			VerifyKoan<GettingStarted>(k => k.SeeingFilesSideBySide, "This file is called ");
+			VerifyKoan<GettingStarted>(k => k.SeeingFilesSideBySide, "This file is called");
 			VerifyKoanIsUnsolved<GettingStarted>(k => k.ChangingTheGoldenMaster);
 			VerifyKoan<GettingStarted>(k => k.VerifyObjects, 150);
 			VerifyKoan<GettingStarted>(k => k.SometimeYouNeedABetterToString, "Cobb");

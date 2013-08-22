@@ -1,1 +1,2 @@
-﻿This file is called GettingStarted.SeeingFilesSideBySide
+﻿This file is called
+GettingStarted.SeeingFilesSideBySide

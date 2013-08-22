@@ -8,13 +8,18 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace ApprovalTestKoans.Lesson01
 {
 	/**
- * How to do Koans:
- * Step 1: Run Test Ctrl+R, (Not Ctrl)T (This is very cursor dependent)
- * Step 2: Read the name of the Method that Failed
- * Step 3: Fill in the blank (___) to make it pass
- * Step 4: Repeat Until Enlightenment
- * Do not change anything except the blank (___)
- */
+		* How to do Koans:
+		* Step 1: Run Test Ctrl+R, (Not Ctrl)T (Click on the method to only run that test)
+		* TroubleShoot : Ctrl+R, Ctrl+T will run in debug mode.
+		* Step 2: Read the name of the Method that Failed, try to run 1 at a time.
+		* Step 3: Fill in the blank (___) to make it pass
+		* TroubleShoot: Do not change anything except the blank (___)
+		* Step 4: Reflect for Enlightenment
+	  * Step 5: Continue
+		* 
+		* NOTE: Each example builds on one another
+		* 
+		*/
 
 	[UseReporter(typeof (MsTestReporter))]
 	[TestClass]
@@ -61,7 +66,7 @@ namespace ApprovalTestKoans.Lesson01
 		public void SeeingFilesSideBySide()
 		{
 			var namer = Approvals.GetDefaultNamer();
-			Approvals.Verify(___ + namer.Name);
+			Approvals.Verify(___ + "\r\n" + namer.Name);
 		}
 
 		[TestMethod]
