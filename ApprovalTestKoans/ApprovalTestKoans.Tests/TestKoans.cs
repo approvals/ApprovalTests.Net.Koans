@@ -20,6 +20,7 @@ namespace ApprovalTestKoans.Tests
 			VerifyKoan<GettingStarted>(k => k.ApprovalFileName, "GettingStarted.ApprovalFileName");
 			VerifyKoanIsUnsolved<GettingStarted>(k => k._____);
 			VerifyKoan<GettingStarted>(k => k.FileNames, "GettingStarted");
+			VerifyKoan<GettingStarted>(k => k.SeeingFilesSideBySide, "This file is called ");
 			VerifyKoanIsUnsolved<GettingStarted>(k => k.ChangingTheGoldenMaster);
 			VerifyKoan<GettingStarted>(k => k.VerifyObjects, 150);
 			VerifyKoan<GettingStarted>(k => k.SometimeYouNeedABetterToString, "Cobb");
@@ -56,6 +57,8 @@ namespace ApprovalTestKoans.Tests
 			VerifyKoanIsUnsolved<ConfiguringReporters>(k => k.ConfiguringTheFileLauncherReporterAtTheMethodLevel);
 			VerifyKoanIsUnsolved<ConfiguringReporters>(k => k.ConfiguringAClassLevelDefault);
 			VerifyKoanIsUnsolved<ConfiguringReportersPart2>(k => k.ConfiguringAnAssemblyLevelDefault);
+		//	VerifyKoan<UsingReporters>(k => k.UsingTextReportersForInsight, "Forty Two");
+		//	VerifyKoan<UsingReporters>(k => k.UsingImageForInsight, "blue");
 		}
 
 		private void VerifyKoanIsUnsolved<T>(Func<T, Action> method) where T : Koans, new()

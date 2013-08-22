@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
+using System.Linq;
 using System.Reflection;
 using ApprovalTestKoans.Helpers;
 using ApprovalTests.Core;
@@ -9,7 +10,6 @@ using ApprovalTests.Reporters;
 using ApprovalUtilities.Utilities;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Approvals = ApprovalTests.Approvals;
-using System.Linq;
 
 namespace ApprovalTestKoans.Lesson04
 {
@@ -58,29 +58,30 @@ namespace ApprovalTestKoans.Lesson04
 			Assert.IsInstanceOfType(second, typeof (_____));
 		}
 
-  [TestMethod]
- [UseReporter(typeof(FileLauncherReporter))]
-  public void UsingTextReportersForInsight() 
-  {
-    if (decode("=fikpKnf") != ___)
-    {
-			var reporter = Approvals.GetReporter();
-			reporter.Report("",PathUtilities.GetAdjacentFile("Insight.txt"));
-      Assert.Fail("Please fill in the blank");
-    }
-  }
-//  [TestMethod]
-// [UseReporter(typeof(ImageWebReporter))]
-//  public void UsingImageForInsight() 
-//  {
-//    String whatWasTheOldColor = ___;
-//    if (!decode("Ycl\\").equals(whatWasTheOldColor.toLowerCase()))
-//    {
-//      var  reporter = ReporterFactory.getFromAnnotation();
-//      reporter.report(getPath("NewImage.png"), getPath("OldImage.png"));
-//      Assert.fail("Please fill in the blank");
-//    }
-//  }
+		[TestMethod]
+		[UseReporter(typeof (FileLauncherReporter))]
+		public void UsingTextReportersForInsight()
+		{
+			if (decode("=fikpKnf") != ___)
+			{
+				var reporter = Approvals.GetReporter();
+				reporter.Report("", PathUtilities.GetAdjacentFile("Insight.txt"));
+				Assert.Fail("Please fill in the blank");
+			}
+		}
+
+		[TestMethod]
+		[UseReporter(typeof (ImageWebReporter))]
+		public void UsingImageForInsight()
+		{
+			String whatWasTheOldColor = ___;
+			if (decode("Ycl\\") != whatWasTheOldColor.ToLowerInvariant())
+			{
+				var reporter = Approvals.GetReporter();
+				reporter.Report(PathUtilities.GetAdjacentFile("OldImage.png"),PathUtilities.GetAdjacentFile("NewImage.png"));
+				Assert.Fail("Please fill in the blank");
+			}
+		}
 	}
 
 	public class _____ : IApprovalFailureReporter
@@ -112,13 +113,13 @@ namespace ApprovalTestKoans.Lesson04
 		}
 	}
 
-	public static  class ReporterHelper
+	public static class ReporterHelper
 	{
 		public static IApprovalFailureReporter GetReporters(this MultiReporter reporter, int index)
 		{
 			FieldInfo field = typeof (MultiReporter).GetField("reporters", BindingFlags.NonPublic | BindingFlags.Instance);
-			var value =(IEnumerable<IApprovalFailureReporter>)field.GetValue(reporter);
+			var value = (IEnumerable<IApprovalFailureReporter>) field.GetValue(reporter);
 			return value.ToArray()[index];
 		}
 	}
-	}
+}

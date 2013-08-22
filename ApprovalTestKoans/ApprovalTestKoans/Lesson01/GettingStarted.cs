@@ -30,7 +30,6 @@ namespace ApprovalTestKoans.Lesson01
 		public void ApprovalHidesTheExpectation()
 		{
 			Approvals.Verify(___);
-			// Hint: If you double click the 1st line of the Failure Trace a diff tool will open
 		}
 
 		[TestMethod]
@@ -44,7 +43,7 @@ namespace ApprovalTestKoans.Lesson01
 		public void _____()
 		{
 			var namer = Approvals.GetDefaultNamer();
-			Assert.AreEqual(namer.Name, "GettingStarted.UsesMethodName");
+			Assert.AreEqual("GettingStarted.UsesMethodName", namer.Name);
 		}
 
 		[TestMethod]
@@ -55,6 +54,14 @@ namespace ApprovalTestKoans.Lesson01
 			string methodName = "FileNames";
 			string approvalName = className + "." + methodName;
 			Assert.AreEqual(namer.Name, approvalName);
+		}
+
+		[TestMethod]
+		[UseReporter(typeof(VisualStudioReporter))]
+		public void SeeingFilesSideBySide()
+		{
+			var namer = Approvals.GetDefaultNamer();
+			Approvals.Verify(___ + namer.Name);
 		}
 
 		[TestMethod]
