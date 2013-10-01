@@ -64,6 +64,7 @@
     <Compile Include="Lesson02\Collections.cs" />
     <Compile Include="Lesson03\ApprovingTheResult.cs" />
     <Compile Include="Lesson04\UsingReporters.cs" />
+    <Compile Include="Lesson05\DataDrivenCombinations.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -75,6 +76,7 @@
     <Content Include="Lesson01\GettingStarted.SometimeYouNeedABetterToString.approved.txt" />
     <Content Include="Lesson01\GettingStarted.VerifyObjects.approved.txt" />
   </ItemGroup>
+  <ItemGroup />
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
       <ItemGroup>
