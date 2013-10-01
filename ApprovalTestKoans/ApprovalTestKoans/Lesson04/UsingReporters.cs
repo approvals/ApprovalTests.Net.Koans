@@ -13,7 +13,12 @@ using Approvals = ApprovalTests.Approvals;
 
 namespace ApprovalTestKoans.Lesson04
 {
-	[TestClass]
+    /*
+     * Note: If the windows that appear keep closing, make sure to run the test with 
+     * Visual Studio instead of ReSharper.
+     */
+
+    [TestClass]
 	[UseReporter(typeof (MsTestReporter))]
 	public class ConfiguringReporters : Koans
 	{
