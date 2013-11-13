@@ -114,7 +114,7 @@ namespace ApprovalTestKoans.Lesson04
 
 		public bool IsWorkingInThisEnvironment(string forFile)
 		{
-			return GenericDiffReporter.IsFileOneOf(forFile, GenericDiffReporter.IMAGE_FILE_TYPES);
+			return GenericDiffReporter.IsFileOneOf(forFile, GenericDiffReporter.GetImageFileTypes());
 		}
 	}
 
