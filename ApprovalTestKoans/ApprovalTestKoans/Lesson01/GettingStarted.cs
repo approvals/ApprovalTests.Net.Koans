@@ -30,15 +30,22 @@ namespace ApprovalTestKoans.Lesson01
 		{
 			Assert.AreEqual("Small String", ___);
 		}
-
 		[TestMethod]
-		public void ApprovalHidesTheExpectation()
+		public void AssertAgainstFileContents()
 		{
-			Approvals.Verify(___);
+			FileAssert.VerifyEqual("expected.txt", ___);
 		}
 
 		[TestMethod]
-		public void ApprovalFileName()
+		public void UsingAutomaticFileNames()
+		{
+			var namer = Approvals.GetDefaultNamer();
+			FileAssert.VerifyEqual(namer.Name + ".txt", ___);
+		}
+
+		
+		[TestMethod]
+		public void AutomaticallyGeneratedNames()
 		{
 			var namer = Approvals.GetDefaultNamer();
 			Assert.AreEqual(namer.Name, ___);
@@ -52,13 +59,31 @@ namespace ApprovalTestKoans.Lesson01
 		}
 
 		[TestMethod]
-		public void FileNames()
+		public void PiecesOfTheFileName()
 		{
 			var namer = Approvals.GetDefaultNamer();
 			string className = ___;
-			string methodName = "FileNames";
+			string methodName = "PiecesOfTheFileName";
 			string approvalName = className + "." + methodName;
 			Assert.AreEqual(namer.Name, approvalName);
+		}
+
+		[TestMethod]
+		public void VerifyingBiggerText()
+		{
+			Rectangle r = new Rectangle();
+			r.Width = 100;
+			r.Height = ____;
+			r.X = 134;
+			r.Y = 162;
+			var namer = Approvals.GetDefaultNamer();
+			FileAssert.VerifyEqual(namer.Name + ".txt", r.ToString());
+		}
+
+		[TestMethod]
+		public void ApprovalsUsesThisFileNameConvention()
+		{
+			Approvals.Verify(___);
 		}
 
 		[TestMethod]
@@ -70,7 +95,7 @@ namespace ApprovalTestKoans.Lesson01
 		}
 
 		[TestMethod]
-		public void ChangingTheGoldenMaster()
+		public void ChangingTheExpectation()
 		{
 			Approvals.Verify("This is the golden master");
 			//Hint: What is the name of the file where the blank is?

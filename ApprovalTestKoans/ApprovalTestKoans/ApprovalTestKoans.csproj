@@ -59,6 +59,7 @@
   <ItemGroup>
     <Compile Include="Helpers\Koans.cs" />
     <Compile Include="Helpers\Sequence.cs" />
+    <Compile Include="Lesson01\FileAssert.cs" />
     <Compile Include="Lesson01\GettingStarted.cs" />
     <Compile Include="Helpers\Person.cs" />
     <Compile Include="Lesson02\Collections.cs" />
@@ -71,7 +72,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Lesson01\GettingStarted.ApprovalHidesTheExpectation.approved.txt" />
+    <Content Include="Lesson01\GettingStarted.VerifyingBiggerText.txt" />
+    <Content Include="Lesson01\GettingStarted.UsingAutomaticFileNames.txt" />
+    <Content Include="Lesson01\expected.txt" />
+    <Content Include="Lesson01\GettingStarted.ApprovalsUsesThisFileNameConvention.approved.txt" />
     <Content Include="Lesson01\GettingStarted.ChangingTheGoldenMaster.approved.txt" />
     <Content Include="Lesson01\GettingStarted.SometimeYouNeedABetterToString.approved.txt" />
     <Content Include="Lesson01\GettingStarted.VerifyObjects.approved.txt" />

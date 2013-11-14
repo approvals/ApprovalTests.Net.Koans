@@ -18,12 +18,15 @@ namespace ApprovalTestKoans.Tests
         public void TestGettingStarted()
         {
             VerifyKoan<GettingStarted>(k => k.NormalAsserts, "Small String");
-            VerifyKoan<GettingStarted>(k => k.ApprovalHidesTheExpectation, "This is in the approved file");
-            VerifyKoan<GettingStarted>(k => k.ApprovalFileName, "GettingStarted.ApprovalFileName");
+            VerifyKoan<GettingStarted>(k => k.AssertAgainstFileContents, "Small String");
+						VerifyKoan<GettingStarted>(k => k.UsingAutomaticFileNames, "Deleted code is debugged code.");
+						VerifyKoan<GettingStarted>(k => k.AutomaticallyGeneratedNames, "GettingStarted.AutomaticallyGeneratedNames");
             VerifyKoanIsUnsolved<GettingStarted>(k => k._____);
-            VerifyKoan<GettingStarted>(k => k.FileNames, "GettingStarted");
-            VerifyKoan<GettingStarted>(k => k.SeeingFilesSideBySide, "This file is called");
-            VerifyKoanIsUnsolved<GettingStarted>(k => k.ChangingTheGoldenMaster);
+            VerifyKoan<GettingStarted>(k => k.PiecesOfTheFileName, "GettingStarted");
+						VerifyKoan<GettingStarted>(k => k.VerifyingBiggerText, 42);
+						VerifyKoan<GettingStarted>(k => k.ApprovalsUsesThisFileNameConvention, "This is in the approved file");
+						VerifyKoan<GettingStarted>(k => k.SeeingFilesSideBySide, "This file is called");
+            VerifyKoanIsUnsolved<GettingStarted>(k => k.ChangingTheExpectation);
             VerifyKoan<GettingStarted>(k => k.VerifyObjects, 150);
             VerifyKoan<GettingStarted>(k => k.SometimeYouNeedABetterToString, "Cobb");
         }
