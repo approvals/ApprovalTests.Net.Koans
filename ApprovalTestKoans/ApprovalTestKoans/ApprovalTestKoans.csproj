@@ -76,7 +76,7 @@
     <Content Include="Lesson01\GettingStarted.UsingAutomaticFileNames.txt" />
     <Content Include="Lesson01\expected.txt" />
     <Content Include="Lesson01\GettingStarted.ApprovalsUsesThisFileNameConvention.approved.txt" />
-    <Content Include="Lesson01\GettingStarted.ChangingTheGoldenMaster.approved.txt" />
+    <Content Include="Lesson01\GettingStarted.ChangingTheExpectation.approved.txt" />
     <Content Include="Lesson01\GettingStarted.SometimeYouNeedABetterToString.approved.txt" />
     <Content Include="Lesson01\GettingStarted.VerifyObjects.approved.txt" />
   </ItemGroup>
