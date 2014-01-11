@@ -33,14 +33,14 @@ namespace ApprovalTestKoans.Lesson01
 		[TestMethod]
 		public void AssertAgainstFileContents()
 		{
-			FileAssert.VerifyEqual("expected.txt", ___);
+			FileAssert.VerifyContentsIsEqual("expected.txt", ___);
 		}
 
 		[TestMethod]
 		public void UsingAutomaticFileNames()
 		{
 			var namer = Approvals.GetDefaultNamer();
-			FileAssert.VerifyEqual(namer.Name + ".txt", ___);
+			FileAssert.VerifyContentsIsEqual(namer.Name + ".txt", ___);
 		}
 
 		
@@ -77,7 +77,7 @@ namespace ApprovalTestKoans.Lesson01
 			r.X = 134;
 			r.Y = 162;
 			var namer = Approvals.GetDefaultNamer();
-			FileAssert.VerifyEqual(namer.Name + ".txt", r.ToString());
+			FileAssert.VerifyContentsIsEqual(namer.Name + ".txt", r.ToString());
 		}
 
 		[TestMethod]
