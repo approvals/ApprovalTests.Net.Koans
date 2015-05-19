@@ -10,7 +10,7 @@ By: Llewellyn Falco
 ApprovalTests is a verification library to help with unit testing. 
 These Koans are an interactive and fun way to be introduced to and learn how to test with ApprovalTests.
 
-**Group Learning**
+**Group Learning**  
 If you are learning with a group checkout the printouts to help facilitate that at [Group Learning Facilitation](https://github.com/approvals/GroupLearningFacilitation)
 
 **Current Lessons**
