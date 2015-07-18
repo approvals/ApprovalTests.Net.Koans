@@ -46,7 +46,7 @@ namespace ApprovalTestKoans.Lesson03
 		{
 			// Directions: 
 			// 1)Run the test
-			// 2) The Open a command line (CMD), and paste (right mouse click) the command the move command from your clipboard  
+			// 2)Copy the text from the retreived side to the approved side.
 			Approvals.Verify("Copied & Pasted Via Visual Studio");
 		}
 
