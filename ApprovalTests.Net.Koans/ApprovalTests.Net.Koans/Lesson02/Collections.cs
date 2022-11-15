@@ -1,10 +1,7 @@
-﻿using System.Collections.Generic;
-using System.Text;
+﻿using System.Text;
 using ApprovalTestKoans.Helpers;
 using ApprovalTests;
 using ApprovalTests.Reporters;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using ApprovalUtilities.Utilities;
 
 namespace ApprovalTestKoans.Lesson02
 {

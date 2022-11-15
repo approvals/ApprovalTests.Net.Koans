@@ -1,7 +1,6 @@
 ﻿using ApprovalTestKoans.Helpers;
 using ApprovalTests;
 using ApprovalTests.Reporters;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace ApprovalTestKoans.Lesson03
 {

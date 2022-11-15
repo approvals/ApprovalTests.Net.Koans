@@ -1,6 +1,4 @@
-﻿using System.IO;
-using ApprovalUtilities.Utilities;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using ApprovalUtilities.Utilities;
 
 namespace ApprovalTestKoans.Lesson01
 {

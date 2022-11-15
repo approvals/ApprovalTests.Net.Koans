@@ -1,17 +1,13 @@
-﻿using System;
-using ApprovalTestKoans.Helpers;
+﻿using ApprovalTestKoans.Helpers;
 using ApprovalTestKoans.Lesson01;
 using ApprovalTestKoans.Lesson02;
 using ApprovalTestKoans.Lesson03;
 using ApprovalTestKoans.Lesson04;
 using ApprovalUtilities.Utilities;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 
 namespace ApprovalTestKoans.Tests
 {
-    using ApprovalTests.Reporters;
-    using ApprovalTests.Reporters.TestFrameworks;
     using Lesson05;
 
     [TestClass]
