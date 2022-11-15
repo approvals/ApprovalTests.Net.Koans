@@ -1,1 +1,2 @@
+cd ApprovalTestKoans
 dotnet test
