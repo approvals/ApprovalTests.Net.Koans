@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33103.184
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApprovalTests.Net.Koans", "ApprovalTests.Net.Koans\ApprovalTests.Net.Koans.csproj", "{F4B9829F-FF6D-4D77-B4BB-70909E7FB2FA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApprovalTests.Net.Koans.Tests", "ApprovalTests.Net.Koans.Tests\ApprovalTests.Net.Koans.Tests.csproj", "{F29B8D04-44C0-4E70-B9F3-CC8515DCE9B7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F4B9829F-FF6D-4D77-B4BB-70909E7FB2FA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F4B9829F-FF6D-4D77-B4BB-70909E7FB2FA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F4B9829F-FF6D-4D77-B4BB-70909E7FB2FA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F4B9829F-FF6D-4D77-B4BB-70909E7FB2FA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F29B8D04-44C0-4E70-B9F3-CC8515DCE9B7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F29B8D04-44C0-4E70-B9F3-CC8515DCE9B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F29B8D04-44C0-4E70-B9F3-CC8515DCE9B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F29B8D04-44C0-4E70-B9F3-CC8515DCE9B7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9F6F898B-BDE2-4AE6-A62F-F8EB3690C810}
+	EndGlobalSection
+EndGlobal

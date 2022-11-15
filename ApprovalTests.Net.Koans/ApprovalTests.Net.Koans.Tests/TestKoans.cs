@@ -7,11 +7,15 @@ using ApprovalTestKoans.Lesson04;
 using ApprovalUtilities.Utilities;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
+
 namespace ApprovalTestKoans.Tests
 {
+    using ApprovalTests.Reporters;
+    using ApprovalTests.Reporters.TestFrameworks;
     using Lesson05;
 
     [TestClass]
+   
     public class TestKoans
     {
         [TestMethod]
@@ -104,7 +108,7 @@ namespace ApprovalTestKoans.Tests
             {
                 if (exception == null)
                 {
-                    Assert.Fail("The method {0} is already passing".FormatWith(method.Method.Name));
+                    Assert.Fail($"The method {method.Method.Name} is already passing");
                 }
             }
         }

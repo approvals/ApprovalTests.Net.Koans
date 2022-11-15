@@ -1,24 +1,20 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.IO;
-using System.Linq;
+﻿using System.Diagnostics;
 using System.Reflection;
 using ApprovalTestKoans.Helpers;
 using ApprovalTests.Core;
 using ApprovalTests.Reporters;
+using ApprovalTests.Reporters.TestFrameworks;
 using ApprovalUtilities.Utilities;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Approvals = ApprovalTests.Approvals;
 
 namespace ApprovalTestKoans.Lesson04
 {
-    /*
+	/*
      * Note: If the windows that appear keep closing, make sure to run the test with 
      * Visual Studio instead of ReSharper.
      */
 
-    [TestClass]
+	[TestClass]
 	[UseReporter(typeof (MsTestReporter))]
 	public class ConfiguringReporters : Koans
 	{
@@ -103,10 +99,9 @@ namespace ApprovalTestKoans.Lesson04
 
 		public void Report(string approved, string received)
 		{
-			String text =
-				"<html><body><center><table border=1><tr><td><img src=\"file:///{0}\"></td><td><img src=\"file:///{1}\"></td></tr><tr><td>approved</td><td>received</td></tr></table>  {2} <br/> <b>to approve :</b> copy clipboard to command window  <br/> <font size=1>{3}</font></center></body></html>";
-			String moveText = QuietReporter.GetCommandLineForApproval(approved, received);
-			text = text.FormatWith(approved, received, received, moveText);
+            String moveText = QuietReporter.GetCommandLineForApproval(approved, received);
+String text =
+				$"<html><body><center><table border=1><tr><td><img src=\"file:///{approved}\"></td><td><img src=\"file:///{received}\"></td></tr><tr><td>approved</td><td>received</td></tr></table>  {received} <br/> <b>to approve :</b> copy clipboard to command window  <br/> <font size=1>{moveText}</font></center></body></html>";
 			string file = Path.GetTempFileName() + ".html";
 			File.WriteAllText(file, text);
 			Process.Start(file);
@@ -114,7 +109,8 @@ namespace ApprovalTestKoans.Lesson04
 
 		public bool IsWorkingInThisEnvironment(string forFile)
 		{
-			return GenericDiffReporter.IsFileOneOf(forFile, GenericDiffReporter.GetImageFileTypes());
+			
+			return forFile.EndsWith(".png");
 		}
 	}
 

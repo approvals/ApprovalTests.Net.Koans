@@ -14,7 +14,7 @@ namespace ApprovalTestKoans.Helpers
 				n1 = n2;
 				n2 = n3;
 			}
-			return "#{0} => {1}".FormatWith(number, n2);
+			return $"#{number} => {n2}";
 		}
 	}
 }
